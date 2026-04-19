@@ -12,6 +12,5 @@ def add():
     b = int(request.args.get('b', 0))
     return {"result": a + b}
 
-# DO NOT set host/port manually for Azure
 if __name__ == '__main__':
     app.run()
