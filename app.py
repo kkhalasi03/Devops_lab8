@@ -1,12 +1,17 @@
-From flask import Flask, request
+from flask import Flask, request
+
 app = Flask(__name__)
+
 @app.route('/')
 def home():
-  return "Addition API is running!"
+    return "Addition API is running!"
+
 @app.route('/add')
 def add():
-  a = int(request.args.get('a', 0))
-  b = int(request.args.get('b', 0))
-  return {"result": a + b}
+    a = int(request.args.get('a', 0))
+    b = int(request.args.get('b', 0))
+    return {"result": a + b}
+
+# DO NOT set host/port manually for Azure
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=80)
+    app.run()
